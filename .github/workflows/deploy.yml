@@ -2,7 +2,7 @@ name: Deploy docs to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   # Allow manual runs from the Actions tab
   workflow_dispatch:
 
@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
@@ -31,8 +33,19 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build site
-        run: mkdocs build --strict
+      # Production site — always built from main, always required to pass.
+      - name: Build production site (main) → /
+        run: |
+          git checkout -B main origin/main
+          mkdocs build --strict --site-dir site
+
+      # Preview site — built from develop for testing/visualization.
+      # continue-on-error so a broken preview never blocks the production deploy.
+      - name: Build preview site (develop) → /develop/
+        continue-on-error: true
+        run: |
+          git checkout -B develop origin/develop
+          mkdocs build --strict --site-dir site/develop
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5

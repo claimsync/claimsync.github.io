@@ -4,3 +4,13 @@ How-to guides and team conventions.
 
 - **[Contributing](contributing.md)** — how to add and edit these docs.
 - **[Documentation Style](documentation-style.md)** — writing conventions.
+
+## EHR Pipeline
+
+- **[Monthly Report Flow](ehr_pipeline/monthly_report/monthly_report_flow.md)** — end-to-end walkthrough of `POST /generate-monthly-report`, from request to the tables it writes.
+
+## mom-backend
+
+- **[Architecture Guide](mom_backend/CLAUDE.md)** — module structure, request flow, and dependency rules for the FastAPI backend.
+- **[Migration Runner](mom_backend/MIGRATIONS.md)** — how startup migrations are discovered, applied, and tamper-checked.
+- **[Git Submodule Management](mom_backend/README.md)** — setting up and updating the `medication-optimization-alternatives-search-modules` submodule.
