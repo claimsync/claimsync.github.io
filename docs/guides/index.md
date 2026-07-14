@@ -9,8 +9,9 @@ How-to guides and team conventions.
 
 - **[Monthly Report Flow](ehr_pipeline/monthly_report/monthly_report_flow.md)** — end-to-end walkthrough of `POST /generate-monthly-report`, from request to the tables it writes.
 
-## mom-backend
+## MOM-Backend
 
 - **[Architecture Guide](mom_backend/CLAUDE.md)** — module structure, request flow, and dependency rules for the FastAPI backend.
 - **[Migration Runner](mom_backend/MIGRATIONS.md)** — how startup migrations are discovered, applied, and tamper-checked.
 - **[Git Submodule Management](mom_backend/README.md)** — setting up and updating the `medication-optimization-alternatives-search-modules` submodule.
+- **[Feature Modules](mom_backend/modules/index.md)** — reference docs for all 21 API modules (endpoints, data model, notes), one page per module.
