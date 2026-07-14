@@ -10,6 +10,7 @@
 - **[Fall Risk Assessment](fall-risk.md)** — fall risk scoring plus IDT care planning
 - **[Opioid](opioid.md)** — daily morphine milligram equivalent (MME) and risk level
 - **[Drug-Drug Interactions (DDI)](ddi.md)** — interaction matrix and medication-alternatives ranking
+    - **[Medication Alternatives: Complete Reference](medication-alternatives.md)** — deep dive on the alternatives ranker: request flow, scoring, SLM 4-tier lookup, config, env vars
 - **[Cascade](cascade.md)** — prescribing-cascade hypothesis detection
 
 ## Care workflows
